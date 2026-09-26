@@ -28,164 +28,64 @@ Course Name : Object Oriented Programing C++
 
 1. Basic Single Inheritance
 
-Concept: One base class → one derived class.
-Person is the base class and Student inherits from it. Student gets the name and displays its own rollNumber.
-
-Example:
-Person → Student
+This program demonstrates single inheritance, where one derived class inherits properties and functions from one base class. Here, Student inherits from Person and displays the student's name and roll number.
 
 2. Protected Member Access
 
-Concept: A protected member can be accessed inside the base class and its derived classes.
-
-Here, Developer inherits Employee and directly accesses the protected name variable.
-
-Main point:
-protected = accessible in parent + child class, but not directly outside.
+This program demonstrates the protected access specifier. A derived class can directly access the protected data member of its base class. Here, Developer accesses the name inherited from Employee.
 
 3. Public vs Private Inheritance
 
-Concept: Shows the difference between public and private inheritance.
+This program explains the difference between public and private inheritance. Public inheritance keeps base public members accessible, while private inheritance makes them private within the derived class.
 
-Public inheritance: Base public members remain public.
-Private inheritance: Base public/protected members become private in the derived class.
 4. Multilevel Inheritance
 
-Concept: Inheritance happens in multiple levels.
-
-Person → Employee → Manager
-
-Manager can use features inherited from both Employee and Person.
+This program demonstrates inheritance through multiple levels. Manager inherits from Employee, and Employee inherits from Person. Therefore, Manager can use features from both classes.
 
 5. Hierarchical Inheritance
 
-Concept: One base class has multiple derived classes.
-
-Vehicle → Car
-Vehicle → Bike
-
-Both Car and Bike can use the start() function of Vehicle but also have their own functions.
+This program demonstrates hierarchical inheritance, where multiple classes inherit from the same base class. Car and Bike both inherit common features from Vehicle and have their own special functions.
 
 6. Multiple Inheritance
 
-Concept: One derived class inherits from two or more base classes.
+This program demonstrates multiple inheritance, where one class inherits from two base classes. Student inherits academic marks from Academic and sports marks from Sports, then calculates the total.
 
-Academic + Sports → Student
+7. Multiple-Inheritance Ambiguity
 
-Student receives academic marks and sports marks and calculates total marks.
-
-7. Resolving Multiple-Inheritance Ambiguity
-
-Concept: Both parent classes have a function with the same name.
-
-Both Academic and Sports have display().
-
-The scope resolution operator :: tells C++ which function to call.
-
-student.Academic::display();
-student.Sports::display();
+This program shows what happens when two base classes have functions with the same name. The ambiguity is solved by specifying which base-class function should be called using the scope-resolution operator.
 
 8. Constructor and Destructor Order
 
-Concept: Shows the order in which constructors and destructors execute.
-
-Creation:
-
-Base constructor
-↓
-Derived constructor
-
-Destruction:
-
-Derived destructor
-↓
-Base destructor
+This program demonstrates the order of constructor and destructor execution in inheritance. The base constructor executes first, followed by the derived constructor. During destruction, the derived destructor executes first, followed by the base destructor.
 
 9. Parameterized Base Constructor
 
-Concept: A derived-class constructor calls the parameterized constructor of the base class using an initializer list.
-
-Student(...) : Person(studentName), rollNumber(roll)
-
-So, the Person part is initialized first, followed by Student.
+This program shows how a derived class initializes a parameterized constructor of its base class. The student's name is passed to the Person class, while the roll number is initialized in the Student class.
 
 10. Function Overriding
 
-Concept: A derived class provides its own version of a base-class function.
-
-Vehicle has move(), while Car and Boat override it.
-
-Vehicle → move()
-   ↓
-Car   → Car moves on roads
-Boat  → Boat moves on water
-
-virtual and override are used.
+This program demonstrates function overriding. The base class provides a move function, and derived classes provide their own versions according to their behavior.
 
 11. Abstract Class
 
-Concept: An abstract class contains a pure virtual function.
+This program demonstrates an abstract class using a pure virtual function. Shape defines the concept of calculating area, while Rectangle and Circle provide their own area calculations.
 
-virtual double area() const = 0;
+12. Virtual Base Class and Diamond Inheritance
 
-Shape is abstract, so we cannot create a Shape object directly.
-
-Rectangle and Circle provide their own area() implementations.
-
-12. Virtual Base Class / Diamond Inheritance
-
-Concept: Solves the problem of getting duplicate copies of a base class in diamond inheritance.
-
-       Person
-       /    \
-  Student  Employee
-       \    /
-   TeachingAssistant
-
-virtual public Person ensures that only one Person object exists in TeachingAssistant.
+This program solves the diamond inheritance problem. Virtual inheritance ensures that the final derived class has only one copy of the common base class Person.
 
 13. Friend Class
 
-Concept: A friend class can access the private members of another class.
+This program demonstrates a friend class. The Auditor class is allowed to access the private balance of the Account class because it is declared as a friend.
 
-Here, Auditor is declared as a friend of Account, so it can access the private balance.
-
-friend class Auditor;
 14. Nested Class
 
-Concept: A class defined inside another class is called a nested class.
-
-University
-    ↓
-Department
-
-Department is defined inside University and is accessed as:
-
-University::Department
+This program demonstrates a nested class, where one class is defined inside another class. Here, Department is defined inside University and represents a department of the university.
 
 15. Vehicle Rental System
 
-Concept: A practical mini-project using inheritance and function overriding.
-
-       Vehicle
-       /     \
-     Car     Bike
-Car calculates normal rent.
-Bike gets a 10% discount.
-display() is overridden for different vehicle details.
-
-Example:
-Car = ₹2000/day × 3 = ₹6000
-Bike = ₹800/day × 3 × 0.9 = ₹2160.
+This mini-project demonstrates inheritance in a vehicle rental system. Car and Bike inherit from Vehicle. The program displays vehicle details and calculates rental charges; the bike has a 10% discount.
 
 16. Employee Payroll System
 
-Concept: Uses an abstract class + inheritance + function overriding.
-
-          Employee
-          /      \
- Permanent     Contract
- Employee      Employee
-Permanent employee salary = basic salary + allowance.
-Contract employee salary = hourly rate × hours worked.
-calculateSalary() is a pure virtual function overridden by both classes.
+This mini-project demonstrates an employee salary system using an abstract base class. Permanent employees receive basic salary plus allowance, while contract employees are paid according to their hourly rate and hours worked.
