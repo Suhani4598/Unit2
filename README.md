@@ -1,27 +1,49 @@
 # Unit2
+
 C++
-Student Name : Suhani Dalve 
+
+Student Name : Suhani Dalve
+
 PRN :126UAD2003
+
 Class/Division : SY-F
+
 Course Name : Object Oriented Programing C++
+
  Unit II 
 
 ======List of Program======
+
 1.Basic single inheritance
+
 2.Protected member access
+
 3.Public versus private inheritance 
+
 4.Multilevel inheritance
+
 5.Hierarchical inheritance 
+
 6.Multiple inheritance
+
 7.Multiple-inheritance ambiguity
+
 8.Constructor and destructor order
+
 9.Parameterized base constructor
+
 10.Function overriding
+
 11.Abstract class
-12.Virtual base class 
+
+12.Virtual base class
+
 13.Friend class 
-14.Nested class 
+
+14.Nested class
+
 15.Mini-project: Vehicle rental
+
 16.Mini-project: Employee payroll
 
 ======Brief Descrition of Each Progarm======
